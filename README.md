@@ -60,7 +60,7 @@ The above query would result in the following data:
 ## Publish status
 
 By default, the `locales` field only returns entries in published locales. To include all locales
-regardless of publish status, set the `unpublished` arg to `false`:
+regardless of publish status, set the `unpublished` arg to `true`:
 
 ```graphql
 locales (unpublished: true) {
@@ -72,19 +72,19 @@ locales (unpublished: true) {
 
 ## Available subfields
 
-| Subfield      | Value      |
-|---------------|---------------|
-| `id` | `$entry->id()` |
-| `locale` | `$entry->locale()` |
-| `current` | `$entry->locale()` === `locale` filter of query |
-| `slug` | `$entry->slug()` |
-| `url` | `$entry->url()` |
-| `uri` | `$entry->uri()` |
-| `permalink` | `$entry->absoluteUrl()` |
-| `published` | `$entry->published()` |
-| `private` | `$entry->private()` |
-| `status` | `$entry->status()` |
-| `title` | `$entry->get('title')` |
+| Subfield | Type | Value |
+|---------------|---------------|---------------|
+| `id` | `string` | `$entry->id()` |
+| `locale` | `string` | `$entry->locale()` |
+| `current` | `boolean` | `$entry->locale()` === `locale` filter of query |
+| `slug` | `string` | `$entry->slug()` |
+| `url` | `string` | `$entry->url()` |
+| `uri` | `string` | `$entry->uri()` |
+| `permalink` | `string` | `$entry->absoluteUrl()` |
+| `published` | `boolean` | `$entry->published()` |
+| `private` | `boolean` | `$entry->private()` |
+| `status` | `string` | `$entry->status()` |
+| `title` | `string` | `$entry->get('title')` |
 
 ## License
 
