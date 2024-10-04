@@ -5,6 +5,8 @@
 This addon provides a simple way of querying alternate languages of entries in GraphQL. Mainly
 useful for frontend language switches.
 
+![Screenshot of locale query in Statamic GraphiQL interface](./art/statamic-graphql-alternate-locales.png)
+
 ## Installation
 
 ```sh
