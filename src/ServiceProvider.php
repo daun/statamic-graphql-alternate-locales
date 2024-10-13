@@ -11,6 +11,10 @@ class ServiceProvider extends AddonServiceProvider
 {
     public function bootAddon(): void
     {
+        if (! config('statamic.graphql.enabled')) {
+            return;
+        }
+
         GraphQL::addType(EntryLocaleType::class);
 
         GraphQL::addField('EntryInterface', 'locales', function () {
