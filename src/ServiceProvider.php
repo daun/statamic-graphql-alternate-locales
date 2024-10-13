@@ -5,6 +5,7 @@ namespace Daun\StatamicGraphQLAlternateLocales;
 use Daun\StatamicGraphQLAlternateLocales\GraphQL\EntryLocaleType;
 use Statamic\Entries\Entry;
 use Statamic\Facades\GraphQL;
+use Statamic\GraphQL\Types\EntryInterface;
 use Statamic\Providers\AddonServiceProvider;
 
 class ServiceProvider extends AddonServiceProvider
@@ -17,7 +18,7 @@ class ServiceProvider extends AddonServiceProvider
 
         GraphQL::addType(EntryLocaleType::class);
 
-        GraphQL::addField('EntryInterface', 'locales', function () {
+        GraphQL::addField(EntryInterface::NAME, 'locales', function () {
             return [
                 'type' => GraphQL::listOf(GraphQL::type(EntryLocaleType::NAME)),
                 'args' => [
